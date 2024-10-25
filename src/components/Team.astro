@@ -1,0 +1,57 @@
+---
+import Member from "./Team/Member.astro";
+---
+
+<section id="team" class="rounded-lg bg-gray-100 dark:bg-gray-800">
+  <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
+    <div class="mx-auto max-w-screen-sm text-center mb-8 lg:mb-16">
+      <h2 class="mb-4 text-4xl tracking-tight font-extrabold">Notre équipe</h2>
+      <p class="font-light lg:mb-16 sm:text-xl">
+        La communauté est animée par une équipe de passionnés qui donnent de
+        leur temps pour faire vivre cette communauté.
+      </p>
+    </div>
+    <div
+      class="grid gap-8 lg:gap-16 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4"
+    >
+      <Member
+        fullName="Xavier Gorse"
+        role="Co-fondateur @Elao, @Amabla et @Rix"
+        imageUrl="/src/assets/team/xgorse.jpeg"
+        links={[
+          { name: "LinkedIn", url: "https://www.linkedin.com/in/xgorse/" },
+        ]}
+      />
+      <Member
+        fullName="Xavier Barry"
+        role="CTO CTPO @ pHack-Man"
+        imageUrl="/src/assets/team/xbarry.jpeg"
+        links={[
+          { name: "LinkedIn", url: "https://www.linkedin.com/in/xavierbarry/" },
+        ]}
+      />
+      <Member
+        fullName="Yann Verneau"
+        role="Co-founder, CTO @ Co-CTO"
+        imageUrl="/src/assets/team/yverneau.jpeg"
+        links={[
+          {
+            name: "LinkedIn",
+            url: "https://www.linkedin.com/in/yann-verneau/",
+          },
+        ]}
+      />
+      <Member
+        fullName="Kevin Delfour"
+        role="Associate director @Max Lyon"
+        imageUrl="/src/assets/team/kdelfour.jpeg"
+        links={[
+          {
+            name: "LinkedIn",
+            url: "https://www.linkedin.com/in/kevindelfour/",
+          },
+        ]}
+      />
+    </div>
+  </div>
+</section>
