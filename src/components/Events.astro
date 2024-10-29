@@ -11,6 +11,13 @@ interface EventResponse {
 }
 
 const response = (await GET_Events(Astro)) as unknown as EventResponse;
+interface Props {
+  data: {
+    title: string;
+    content: string[];
+  };
+}
+const { data } = Astro.props;
 ---
 
 <section id="events" class="bg-white dark:bg-gray-900">
@@ -18,18 +25,12 @@ const response = (await GET_Events(Astro)) as unknown as EventResponse;
     <div class="mx-auto max-w-screen-sm text-center lg:mb-16 mb-8">
       <h2
         class="mb-4 text-3xl lg:text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white"
-      >
-        Des Événements pour Développer Vos Compétences et Partager Votre
-        Expertise
-      </h2>
-      <p class="font-light text-gray-500 sm:text-xl dark:text-gray-400">
-        Chaque mois, nous organisons des événements techniques ouverts
-        exclusivement aux membres de la communauté CTO de Lyon. Tables rondes,
-        ateliers pratiques, ou études de cas : ces rencontres sont pensées pour
-        stimuler les échanges et offrir des solutions concrètes à des
-        problématiques réelles. Aucune prospection, aucune vente : ici, seule la
-        technique compte.
-      </p>
+        set:html={data.title}
+      />
+      <p
+        class="font-light text-gray-500 sm:text-xl dark:text-gray-400"
+        set:html={data.content}
+      />
     </div>
     <div class="grid gap-8 lg:grid-cols-2">
       {

@@ -1,64 +1,41 @@
-<section >
+---
+interface Props {
+  data: {
+    title: string;
+  items: {
+    title: string;
+    content: string;
+  }[];
+  };
+}
+const { data } = Astro.props;
+---
+
+<section>
   <div class="py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6">
     <div class="max-w-screen-md mb-8 lg:mb-16">
       <h2
         class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white"
-      >
-        Nos règles de conduite
-      </h2>
+        set:html={data.title}
+      />
     </div>
     <div
       class="space-y-8 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-12 md:space-y-0"
     >
-      <div>
-        <h3 class="mb-2 text-xl font-bold dark:text-white">
-          Respect et courtoisie
-        </h3>
-        <p class="text-gray-500 dark:text-gray-400">
-          Faites preuve de respect et de courtoisie envers tous. Les discussions
-          doivent rester cordiales, même en cas de désaccord.
-        </p>
-      </div>
-      <div>
-        <h3 class="mb-2 text-xl font-bold dark:text-white">Pas de publicité</h3>
-        <p class="text-gray-500 dark:text-gray-400">
-          La promotion de produits ou services commerciaux n'est pas autorisée.
-          Les contrevenants seront exclus.
-        </p>
-      </div>
-      <div>
-        <h3 class="mb-2 text-xl font-bold dark:text-white">
-          Contenu pertinent
-        </h3>
-        <p class="text-gray-500 dark:text-gray-400">
-          Assurez-vous que tout le contenu partagé est pertinent pour le sujet
-          du management collaboratif.
-        </p>
-      </div>
-      <div>
-        <h3 class="mb-2 text-xl font-bold dark:text-white">Pas de spam</h3>
-        <p class="text-gray-500 dark:text-gray-400">
-          Évitez les publications en série ou répétitives. Les membres fautifs
-          seront supprimés
-        </p>
-      </div>
-      <div>
-        <h3 class="mb-2 text-xl font-bold dark:text-white">
-          Confidentialité et vie privée
-        </h3>
-        <p class="text-gray-500 dark:text-gray-400">
-          Respectez la vie privée des autres membres. Ne partagez pas
-          d'informations personnelles sans le consentement explicite des
-          intéressés
-        </p>
-      </div>
-      <div>
-        <h3 class="mb-2 text-xl font-bold dark:text-white">Modération</h3>
-        <p class="text-gray-500 dark:text-gray-400">
-          Les modérateurs se réservent le droit de retirer tout contenu ou
-          membre qui enfreint ces règles.
-        </p>
-      </div>
+      {
+        data.items.map((item) => (
+          <div>
+            <h3
+              class="mb-2 text-xl font-bold dark:text-white"
+              set:html={item.title}
+            />
+            <p
+              class="text-gray-500 dark:text-gray-400"
+              set:html={item.content}
+            />
+          </div>
+        ))
+      }
     </div>
   </div>
 </section>

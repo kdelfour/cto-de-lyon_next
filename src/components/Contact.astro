@@ -1,18 +1,30 @@
+---
+interface Props {
+  data: {
+    title: string;
+  content: string;
+  action: {
+    title: string;
+    url: string;
+  };
+  };
+}
+const { data } = Astro.props;
+---
+
 <section class="rounded-lg bg-gray-100 dark:bg-gray-800">
   <div class="py-8 lg:py-16 px-4 mx-auto max-w-screen-md">
     <h2
       class="mb-4 text-4xl tracking-tight font-extrabold text-center text-gray-900 dark:text-white"
-    >
-      Contactez-nous
-    </h2>
-    <p class="mb-8 lg:mb-16 font-light text-center sm:text-xl">
-      Pour toute question ou suggestion, n'hésitez pas à contacter notre équipe
-      d'animation. Ensemble, enrichissons-nous les uns des autres et façonnons
-      l'avenir de la technologie dans notre région ! 💪
-    </p>
+      set:html={data.title}
+    />
+    <p
+      class="mb-8 lg:mb-16 font-light text-center sm:text-xl"
+      set:html={data.content}
+    />
     <div class="flex justify-center">
       <a
-        href="mailto:contact@cto-de-lyon.fr"
+        href={data.action.url}
         class="inline-flex items-center justify-center px-5 py-3 text-base font-medium text-center border border-gray-300 rounded-lg bg-blue-600 hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800"
       >
         <svg
@@ -23,9 +35,7 @@
             fill="currentColor"
             d="M4.616 19q-.691 0-1.153-.462T3 17.384V6.616q0-.691.463-1.153T4.615 5h14.77q.69 0 1.152.463T21 6.616v10.769q0 .69-.463 1.153T19.385 19zM12 12.116L4 6.885v10.5q0 .269.173.442t.443.173h14.769q.269 0 .442-.173t.173-.443v-10.5zM12 11l7.692-5H4.308zM4 6.885V6v11.385q0 .269.173.442t.443.173H4z"
           ></path></svg
-        >
-
-        Envoyer un mail
+        >&nbsp;{data.action.title}
       </a>
     </div>
   </div>

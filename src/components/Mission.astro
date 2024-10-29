@@ -1,90 +1,45 @@
+---
+interface Props {
+  data:{
+
+    title: string;
+    content: string[];
+    items: {
+      title: string;
+      content: string;
+      icon: string;
+    }[];
+  }
+}
+const { data } = Astro.props;
+---
+
 <section id="mission" class="rounded-lg bg-gray-100 dark:bg-gray-800">
   <div class="py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6">
     <div class="max-w-screen-lg mb-8 lg:mb-16">
-      <h2 class="mb-4 text-4xl tracking-tight font-extrabold">
-        Une mission de <u>Partage</u> et de <u>Collaboration</u>
-      </h2>
+      <h2
+        class="mb-4 text-4xl tracking-tight font-extrabold"
+        set:html={data.title}
+      />
       <p class="sm:text-xl">
-        La communauté des CTO de Lyon a pour mission de rassembler les talents
-        techniques de la région autour d’une vision commune : favoriser les
-        échanges et l’entraide entre pairs. Ici, vous êtes libres d’échanger sur
-        vos défis technologiques, d’apprendre des expériences de vos pairs et de
-        partager vos propres succès et échecs. C’est un espace où la technique,
-        le leadership et la collaboration prennent tout leur sens.
+        {data.content}
       </p>
     </div>
     <div
       class="space-y-8 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-12 md:space-y-0"
     >
-      <div>
-        <div
-          class="flex justify-center items-center mb-4 w-10 h-10 rounded-full bg-primary-100 lg:h-12 lg:w-12 dark:bg-primary-900"
-        >
-          <svg
-            class="w-32 h-32 lg:w-64 lg:h-64"
-            xmlns="http://www.w3.org/2000/svg"
-            width="1em"
-            height="1em"
-            viewBox="0 0 24 24"
-            ><path
-              fill="currentColor"
-              d="m12.2 9l-2-2H13c1.1 0 2 .9 2 2v2.8l-2-2V9zM23 9V7h-4c-1.1 0-2 .9-2 2v2c0 1.1.9 2 2 2h2v2h-2.8l2 2h.8c1.1 0 2-.9 2-2v-2c0-1.1-.9-2-2-2h-2V9zm-.9 12.5l-1.3 1.3l-6.4-6.4c-.3.3-.8.6-1.4.6H9v-6.1l-2-2V17H5v-4H3v4H1V9c0-1.1.9-2 2-2h2.1l-4-4l1.3-1.3zM5 9H3v2h2zm8 5.9l-2-2V15h2z"
-            ></path></svg
-          >
-        </div>
-        <h3 class="mb-2 text-xl font-bold">Indépendant</h3>
-        <p class="">
-          Nous ne dépendons d’aucun groupe, cluster ou entreprise ; notre
-          indépendance est notre force.
-        </p>
-      </div>
-      <div>
-        <div
-          class="flex justify-center items-center mb-4 w-10 h-10 rounded-full bg-primary-100 lg:h-12 lg:w-12 dark:bg-primary-900"
-        >
-          <svg
-            class="w-32 h-32 lg:w-64 lg:h-64"
-            xmlns="http://www.w3.org/2000/svg"
-            width="1em"
-            height="1em"
-            viewBox="0 0 24 24"
-            ><path
-              fill="currentColor"
-              d="M13.796 20.804q.096.038.173.038t.173-.038l5.816-1.792q-.03-.456-.272-.657q-.244-.201-.551-.201H14.39q-.634 0-1.15-.05t-1.055-.238l-1.714-.552q-.205-.068-.295-.27t-.022-.4t.256-.29t.398-.023l1.55.561q.482.164 1.068.21q.585.046 1.449.052h.26q0-.468-.173-.756t-.493-.402l-5.754-2.112q-.057-.019-.106-.028t-.105-.01h-2.1v4.808zm-.255.988l-7.137-2.088q-.143.592-.605.944T4.789 21h-.77q-.666 0-1.14-.475q-.475-.474-.475-1.14V14.46q0-.666.474-1.14q.475-.475 1.141-.475h4.463q.14 0 .287.032q.148.031.275.074l5.779 2.117q.537.204.924.733q.388.529.388 1.352h3q.903 0 1.384.565q.481.566.481 1.435q0 .3-.162.506t-.475.311l-5.884 1.815q-.218.062-.46.072t-.479-.066M3.404 19.384q0 .27.173.443t.442.173h.77q.269 0 .442-.144t.173-.472v-5.538H4.019q-.269 0-.442.173t-.173.443zm12.288-7.626q-.298 0-.586-.109q-.287-.109-.525-.326l-2.654-2.546q-.66-.635-1.101-1.42q-.441-.786-.441-1.71q0-1.104.772-1.875Q11.928 3 13.03 3q.819 0 1.49.443t1.171 1.076q.5-.633 1.172-1.076q.67-.443 1.49-.443q1.103 0 1.874.772T21 5.646q0 .926-.438 1.711q-.439.785-1.099 1.42l-2.66 2.546q-.237.218-.525.326t-.586.109m.424-1.154l2.57-2.463q.533-.514.924-1.138q.39-.624.39-1.357q0-.684-.48-1.165T18.353 4q-.6 0-1.076.359q-.476.358-.855.845l-.167.202q-.217.273-.56.273t-.567-.273l-.167-.202q-.38-.487-.855-.845Q13.63 4 13.03 4q-.685 0-1.165.48q-.481.482-.481 1.166q0 .733.39 1.357t.923 1.138l2.571 2.463q.173.173.423.173t.423-.173m-.423-4.485"
-            ></path></svg
-          >
-        </div>
-        <h3 class="mb-2 text-xl font-bold">Bénévole</h3>
-        <p class="">
-          La communauté est animée par des CTO et tech leaders qui donnent de
-          leur temps pour faire vivre cet espace d’échange.
-        </p>
-      </div>
-      <div>
-        <div
-          class="flex justify-center items-center mb-4 w-10 h-10 rounded-full bg-primary-100 lg:h-12 lg:w-12 dark:bg-primary-900"
-        >
-          <svg
-            class="w-32 h-32 lg:w-64 lg:h-64"
-            xmlns="http://www.w3.org/2000/svg"
-            width="1em"
-            height="1em"
-            viewBox="0 0 14 14"
-            ><path
-              fill="none"
-              stroke="currentColor"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M.646 5.406v3.15M.646.5v3.15m0 6.663v3.15M6.777.5v3.15M8.654.5v3.15M2.62 5.406v3.15m.017-6.882a1.174 1.174 0 1 1 2.349 0v.783a1.174 1.174 0 0 1-2.35 0zM4.415 6.58a1.174 1.174 0 0 1 2.349 0v.783a1.174 1.174 0 1 1-2.349 0v-.782Zm-1.778 4.925a1.174 1.174 0 0 1 2.349 0v.783a1.174 1.174 0 0 1-2.35 0zM8 9.5h5c.3 0 .5.2.5.5v3c0 .3-.2.5-.5.5H8c-.3 0-.5-.2-.5-.5v-3c0-.3.2-.5.5-.5m.5 0v-1c0-1.1.9-2 2-2s2 .9 2 2v1"
-            ></path></svg
-          >
-        </div>
-        <h3 class="mb-2 text-xl font-bold">Exclusivité Tech</h3>
-        <p class="">
-          Seuls les profils techniques sont invités à participer, pour garantir
-          la qualité et la pertinence de nos échanges.
-        </p>
-      </div>
+      {
+        data.items.map((item: { icon: any; title: any; content: unknown }) => (
+          <div>
+            <div
+              class="flex justify-center items-center mb-4 w-10 h-10 rounded-full bg-primary-100 lg:h-12 lg:w-12 dark:bg-primary-900"
+              set:html={item.icon}
+            />
+            <h3 class="mb-2 text-xl font-bold" set:html={item.title} />
+            <p>{item.content}</p>
+          </div>
+        ))
+      }
     </div>
   </div>
 </section>

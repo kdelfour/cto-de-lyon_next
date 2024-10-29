@@ -2,28 +2,30 @@
 import { Image } from "astro:assets";
 import img1 from "../assets/about-us/1.png";
 import img2 from "../assets/about-us/2.png";
----
 
+interface Props {
+  data:{
+    title: string;
+    content: string[];
+  }
+}
+const { data } = Astro.props;
+---
 <section>
   <div
     class="gap-16 items-center py-8 px-4 mx-auto max-w-screen-xl lg:grid lg:grid-cols-2 lg:py-16 lg:px-6"
   >
     <div class="font-light sm:text-lg">
-      <h2 class="mb-4 text-4xl tracking-tight font-extrabold">
-        Les acteurs de la tech <u>Lyonnaise</u>
-      </h2>
-      <p class="mb-4">
-        Notre communauté est constituée de CTO, tech leaders, et passionnés de
-        la région lyonnaise qui se retrouvent pour aborder des problématiques
-        concrètes et actuelles.
-      </p>
-      <p>
-        Que vous soyez dans une startup, une PME ou une grande entreprise, que
-        vous travailliez sur des projets open source ou propriétaires, vous
-        trouverez ici des experts prêts à échanger des retours d’expérience
-        concrets. Ce qui nous relie, c’est la tech – pure et dure – et le désir
-        de faire progresser nos métiers.
-      </p>
+      <h2
+        class="mb-4 text-4xl tracking-tight font-extrabold"
+        set:html={data.title}
+      />
+
+      {
+        data.content.map((data: unknown) => (
+          <p class="mb-8 font-light sm:text-xl">{data}</p>
+        ))
+      }
     </div>
     <div class="grid grid-cols-2 gap-4 mt-8">
       <Image class="w-full rounded-lg" src={img1} alt="office content 1" />

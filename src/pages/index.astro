@@ -9,16 +9,19 @@ import Team from "../components/Team.astro";
 import Contact from "../components/Contact.astro";
 import Rules from "../components/Rules.astro";
 import Hero from "../components/Hero.astro";
+
+import { getEntry } from "astro:content";
+const content = await getEntry("datas", "index/content");
 ---
 
 <DefaultLayout title="Communauté des CTO de Lyon">
-  <Hero />
-  <Introduction />
-  <Mission />
-  <AboutUs />
-  <Team />
-  <Events />
-  <JoinUs />
-  <Rules />
-  <Contact />
+  <Hero data={content.data.hero} />
+  <Introduction data={content.data.introduction} />
+  <Mission data={content.data.mission} />
+  <AboutUs data={content.data.aboutUs} />
+  <Team data={content.data.team} />
+  <Events data={content.data.events} />
+  <JoinUs data={content.data.joinUs} />
+  <Rules data={content.data.rules} />
+  <Contact data={content.data.contact} />
 </DefaultLayout>
