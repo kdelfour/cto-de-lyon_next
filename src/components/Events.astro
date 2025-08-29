@@ -20,7 +20,9 @@ interface Props {
 const { data } = Astro.props;
 ---
 
-<section id="events" class="bg-white dark:bg-gray-900">
+<section id="events" class="" style="background-color: #212325;">
+  
+
   <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
     <div class="mx-auto max-w-screen-sm text-center lg:mb-16 mb-8">
       <h2
@@ -32,7 +34,16 @@ const { data } = Astro.props;
         set:html={data.content}
       />
     </div>
+    <iframe
+    src="https://lu.ma/embed/calendar/cal-kZVcuAvB6h8seC2/events"
+    class="w-full h-auto mb-4 min-h-[250px] rounded-lg  "
+    style="overflow: hidden; border: none;"
+    allowfullscreen=""
+    aria-hidden="false"
+    tabindex="0"></iframe>
+
     <div class="grid gap-8 lg:grid-cols-2">
+
       {
         response.events &&
           response.events.map((event) => (
