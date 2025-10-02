@@ -17,8 +17,8 @@
           {
             "type": "list",
             "items": [
-              "Newsletter : Les utilisateurs qui s’inscrivent volontairement à la newsletter via notre partenaire Brevo nous fournissent leur nom, prénom, adresse e-mail, et poste.",
-              "Événements : Nous utilisons Eventbrite pour gérer les inscriptions et la logistique de nos événements. Les utilisateurs inscrits sur Eventbrite peuvent suivre notre communauté et s'inscrire à nos événements via cette plateforme."
+              "Newsletter : Les utilisateurs qui s’inscrivent volontairement à la newsletter via notre partenaire Luma nous fournissent leur nom, prénom, adresse e-mail, et poste.",
+              "Événements : Nous utilisons Luma pour gérer les inscriptions et la logistique de nos événements. Les utilisateurs inscrits sur Luma peuvent suivre notre communauté et s'inscrire à nos événements via cette plateforme."
             ]
           }
         ]
@@ -33,8 +33,8 @@
           {
             "type": "list",
             "items": [
-              "Gestion de la Newsletter : Les informations collectées dans Brevo permettent de communiquer sur les actualités et événements de la Communauté CTO de Lyon.",
-              "Organisation des Événements : Les données recueillies par Eventbrite permettent de gérer les inscriptions aux événements et de tenir les participants informés des détails relatifs aux événements."
+              "Gestion de la Newsletter : Les informations collectées dans Luma permettent de communiquer sur les actualités et événements de la Communauté CTO de Lyon.",
+              "Organisation des Événements : Les données recueillies par Luma permettent de gérer les inscriptions aux événements et de tenir les participants informés des détails relatifs aux événements."
             ]
           }
         ]
@@ -49,8 +49,8 @@
           {
             "type": "list",
             "items": [
-              "Brevo pour la gestion de la newsletter (les utilisateurs s’inscrivent directement via notre formulaire intégré).",
-              "Eventbrite pour l’organisation des événements (les utilisateurs inscrits sur Eventbrite rejoignent notre communauté via cette plateforme).",
+              "Luma pour la gestion de la newsletter (les utilisateurs s’inscrivent directement via notre formulaire intégré).",
+              "Luma pour l’organisation des événements (les utilisateurs inscrits sur Luma rejoignent notre communauté via cette plateforme).",
               "Les membres organisateurs de la communauté ont accès au nom, prénom et e-mail des utilisateurs inscrits pour les besoins de gestion communautaire. Aucune autre divulgation ou partage de données avec des tiers n'est effectué."
             ]
           }
@@ -91,7 +91,7 @@
           },
           {
             "type": "paragraph",
-            "text": "Pour exercer ces droits, les utilisateurs peuvent contacter notre équipe à l'adresse suivante : contact@cto-de-lyon.fr. Ces droits s’appliquent uniquement aux données gérées dans Brevo, la communauté n’ayant pas accès aux comptes individuels des utilisateurs sur Eventbrite."
+            "text": "Pour exercer ces droits, les utilisateurs peuvent contacter notre équipe à l'adresse suivante : contact@cto-de-lyon.fr. Ces droits s’appliquent uniquement aux données gérées dans Luma, la communauté n’ayant pas accès aux comptes individuels des utilisateurs sur Luma."
           }
         ]
       },
